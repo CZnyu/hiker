@@ -7,6 +7,7 @@ from datetime import date
 
 from app import APP_ENV
 from app.weather_service import get_hourly_forecasts
+from app.weather_service import park_zip_code
 from app.email_service import send_email
 
 load_dotenv()
@@ -16,7 +17,7 @@ MY_NAME = os.getenv("MY_NAME", default="Player 1")
 if __name__ == "__main__":
 
     if APP_ENV == "development":
-        zip_code = input("PLEASE INPUT A ZIP CODE (e.g. 06510): ")
+        zip_code = park_zip_code
         weather_results = get_hourly_forecasts(zip_code=zip_code) # invoke with custom params
     else:
         weather_results = get_hourly_forecasts() # invoke with default params
@@ -35,4 +36,4 @@ if __name__ == "__main__":
         html += f"<li>{hourly['timestamp']} | {hourly['temp']} | {hourly['conditions'].upper()}</li>"
     html += "</ul>"
 
-    send_email(subject="[Daily Briefing] My Morning Report", html=html)
+    send_email(subject="Your adventure awaits...", html=html)

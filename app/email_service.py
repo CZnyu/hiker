@@ -5,17 +5,20 @@ from dotenv import load_dotenv
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
+from app.weather_service import contact
+
 load_dotenv()
 
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 MY_EMAIL = os.environ.get("MY_EMAIL_ADDRESS")
+HIKER_EMAIL = contact
 
 def send_email(subject="[Daily Briefing] This is a test", html="<p>Hello World</p>"):
     client = SendGridAPIClient(SENDGRID_API_KEY) #> <class 'sendgrid.sendgrid.SendGridAPIClient>
     print("CLIENT:", type(client))
     print("SUBJECT:", subject)
     #print("HTML:", html)
-    message = Mail(from_email=MY_EMAIL, to_emails=MY_EMAIL, subject=subject, html_content=html)
+    message = Mail(from_email=MY_EMAIL, to_emails=HIKER_EMAIL, subject=subject, html_content=html)
     try:
         response = client.send(message)
         print("RESPONSE:", type(response)) #> <class 'python_http_client.client.Response'>
