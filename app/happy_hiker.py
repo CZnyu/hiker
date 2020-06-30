@@ -123,7 +123,6 @@ def send_email(subject="[Daily Briefing] This is a test", html="<p>Hello World</
         print("OOPS", e.message)
         return None
 
-MY_NAME = os.getenv("MY_NAME", default="Player 1")
 
 if __name__ == "__main__":
 
