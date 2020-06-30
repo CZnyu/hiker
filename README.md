@@ -4,18 +4,18 @@ Sends you a customized email with information of interest such as the upcoming w
 # Getting Started: 
 Fork this repo and clone it onto your local computer (for example to your Desktop), then navigate there from the command-line:
 
-  cd ~/Desktop/hiker
+    cd ~/Desktop/hiker
 
 # Installing:
 Create and activate a new Anaconda virtual environment, perhaps named "takeahike-env":
  
-  conda create -n takeahike-env python=3.7
+    conda create -n takeahike-env python=3.7
 
-  conda activate takeahike-env
+    conda activate takeahike-env
 
 Then, from within the virtual environment, install package dependencies:
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Obtain API Keys from the Open Weather and SendGrid services. 
 
@@ -69,7 +69,9 @@ For the versions available, see the tags on this repository.
 
 # Authors:
 dak529
+
 CZnyu
+
 jkg363
 
 # License:
@@ -77,7 +79,9 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 # Acknowledgments:
 Code adapted from: prof-rossetti
+
 SOURCE: https://github.com/prof-rossetti/intro-to-python/tree/master/exercises/web-requests
+
 SOURCE: https://github.com/prof-rossetti/intro-to-python/blob/master/exercises/api-client/
 
 # README.md Template from:
