@@ -43,7 +43,7 @@ python -m app.happy_hiker # note the module-syntax invocation
 # Running the tests:
 To run, enter:
 
-    python -m app.weather_service.py
+    python -m app.happy_hiker
 
 A list of parks pulled from the .csv file will generate.  Input your choice of park to retreive its local forecast.  You will then be prompted to input your email address and name.  Once entered into the command line, an email will follow containing your park choice, weather forecast, park features and a downloadable map.
 
