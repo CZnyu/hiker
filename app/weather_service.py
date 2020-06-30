@@ -92,7 +92,7 @@ if __name__ == "__main__":
         results = get_hourly_forecasts() # invoke with default params
 
     print("-----------------")
-    print(f"Weather Forecast for {park_id}...")
+    print(f"WEATHER FORECAST FOR {park_id}...")
     print("-----------------")
 
     for hourly in results["hourly_forecasts"]:
@@ -162,8 +162,6 @@ if __name__ == "__main__":
     for hourly in weather_results["hourly_forecasts"]:
         html += f"<li>{hourly['timestamp']} | {hourly['temp']} | {hourly['conditions'].upper()}</li>"
     html += "</ul>"
-
-    html += f"<p>Now, go take a hike!</p>"
 
     send_email(subject="Your adventure awaits...", html=html)
 
