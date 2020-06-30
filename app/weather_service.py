@@ -92,7 +92,7 @@ if __name__ == "__main__":
         results = get_hourly_forecasts() # invoke with default params
 
     print("-----------------")
-    print(f"WEATHER FORECAST FOR {park_id}...")
+    print(f"Weather Forecast for {park_id}...")
     print("-----------------")
 
     for hourly in results["hourly_forecasts"]:
@@ -100,18 +100,8 @@ if __name__ == "__main__":
 
 print("-----------------------------")
 
-while True:
-    messaging = input("Would you like an email with more park information? (Yes please/No thank you) ")
-
-    if messaging == "No thank you":
-        print("Happy Trails")
-        break
-    elif messaging == "Yes please":
-        contact = input("Yay! Please enter your email: ")
-        user = input("Thanks! And your name: ")
-        break
-    else:
-        print("Who taught you manners? Please Re-Enter.")
+contact = input("For maps and park details, please enter your email: ")
+user = input("Thanks! And your name: ")
 
 
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
@@ -162,6 +152,8 @@ if __name__ == "__main__":
     for hourly in weather_results["hourly_forecasts"]:
         html += f"<li>{hourly['timestamp']} | {hourly['temp']} | {hourly['conditions'].upper()}</li>"
     html += "</ul>"
+
+    html += f"<p>Now, go take a hike!</p>"
 
     send_email(subject="Your adventure awaits...", html=html)
 
