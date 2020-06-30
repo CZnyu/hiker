@@ -1,5 +1,5 @@
 # Happy Hiker Service (Python)
-Sends you a customized email every morning, with information of interest such as the upcoming weather forecast.
+Sends you a customized email with information of interest such as the upcoming weather forecast, park features, and trail map.
 
 # Getting Started: 
 Fork this repo and clone it onto your local computer (for example to your Desktop), then navigate there from the command-line:
@@ -56,6 +56,11 @@ Anaconda
 
 Visual Studio Code
 
+html
+
+SendGrid
+
+OpenWeather
 
 # Versioning:
 GitHub Desktop used for versioning.
